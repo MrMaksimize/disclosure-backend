@@ -6,7 +6,7 @@ import pdb
 
 import pandas as pd
 
-from netfile_raw.management.commands import downloadnetfilerawdata
+from netfile.management.commands import downloadnetfilerawdata
 
 
 class Command(downloadnetfilerawdata.Command):
@@ -15,6 +15,7 @@ class Command(downloadnetfilerawdata.Command):
 
     def load(self):
         data = pd.read_csv(self.combined_csv_path)
+        print(self.combined_csv_path)
         print("There are %d rows in %s" % (len(data), self.combined_csv_path))
         print("Use these keys to query data: ")
         print(data.keys())

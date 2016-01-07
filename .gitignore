@@ -16,3 +16,7 @@ docs/
 # Virtualenv
 env/
 src/
+venv/
+
+#
+*.sublime-*
